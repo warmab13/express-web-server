@@ -6,6 +6,14 @@ const port = 8080;
 
 app.use( express.static('public') );
 
+app.get('/portfolio', (req, res)=>{
+    res.sendFile(__dirname + '/public/portfolio.html');
+})
+
+app.get('/about', (req, res)=>{
+    res.sendFile(__dirname + '/public/about.html');
+})
+
 app.get('/hola-mundo', (req, res)=>{
     res.send('Hola mundo en su respectiva ruta');
 })
