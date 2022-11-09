@@ -6,11 +6,6 @@ const port = 8080;
 
 app.use( express.static('public') );
 
-//With the previous configuration this route does not running never.
-app.get('/', (req, res)=>{
-    res.send('Home page');
-})
-
 app.get('/hola-mundo', (req, res)=>{
     res.send('Hola mundo en su respectiva ruta');
 })
