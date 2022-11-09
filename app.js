@@ -1,9 +1,11 @@
 const express = require('express');
+const hbs = require('hbs');
 const app = express();
 const port = 8080;
-//TODO: const hbs = require('hbs')
 
+//Handlebars
 app.set('view engine', 'hbs');
+hbs.registerPartials(__dirname + '/views/partials');
 
 //Middleware Serve static content
 
@@ -17,11 +19,11 @@ app.get('/', (req, res)=>{
 })
 
 app.get('/portfolio', (req, res)=>{
-    res.sendFile(__dirname + '/public/portfolio.html');
+    res.render('portfolio');
 })
 
 app.get('/about', (req, res)=>{
-    res.sendFile(__dirname + '/public/about.html');
+    res.render('about');
 })
 
 app.get('/hola-mundo', (req, res)=>{
