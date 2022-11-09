@@ -10,7 +10,7 @@ app.set('view engine', 'hbs');
 app.use( express.static('public') );
 
 app.get('/', (req, res)=>{
-    res.send('Hola mundo')
+    res.render('home');
 })
 
 app.get('/portfolio', (req, res)=>{
