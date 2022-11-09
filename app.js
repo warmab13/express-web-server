@@ -1,12 +1,8 @@
-const http = require('http');
+const express = require('express');
+const app = express();
 
-
-const server = http.createServer( (req, res ) => {
-    res.write('Hola mundo');
-
-    res.end();
+app.get('/', (req, res)=>{
+    res.send('Hello world');
 })
 
-server.listen( 8080 );
-
-console.log('Escuchando el puerto', 8080);
+app.listen(8080);
