@@ -10,7 +10,10 @@ app.set('view engine', 'hbs');
 app.use( express.static('public') );
 
 app.get('/', (req, res)=>{
-    res.render('home');
+    res.render('home', {
+        name: 'Alonso',
+        title: 'Node Workshop'
+    });
 })
 
 app.get('/portfolio', (req, res)=>{
