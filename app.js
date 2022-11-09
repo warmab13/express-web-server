@@ -1,10 +1,17 @@
 const express = require('express');
 const app = express();
 const port = 8080;
+//TODO: const hbs = require('hbs')
+
+app.set('view engine', 'hbs');
 
 //Middleware Serve static content
 
 app.use( express.static('public') );
+
+app.get('/', (req, res)=>{
+    res.send('Hola mundo')
+})
 
 app.get('/portfolio', (req, res)=>{
     res.sendFile(__dirname + '/public/portfolio.html');
